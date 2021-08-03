@@ -1,0 +1,30 @@
+{
+  "name": "devtest-z",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {
+	  "gulp-cache": "^1.1.0",
+	  "gulp-rename": "^1.4.0",
+	  "gulp-sass-partials-imported": "^1.0.7",
+	  "del": "^3.0.0",
+	  "gulp-clean-css": "^4.0.0",
+	  "gulp-connect": "^5.7.0",
+	  "gulp-inject": "^5.0.2",
+	  "gulp-open": "^3.0.1",
+	  "gulp-sass": "^5.0.0",
+	  "gulp-uglify": "^3.0.1",
+	  "gulp-eslint":"latest",
+	  "browser-sync":"latest",
+	  "node-sass": "latest"
+    },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "RM",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "sass":"^1.35.0"
+  }
+}

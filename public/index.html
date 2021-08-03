@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+	<!-- https://github.com/necolas/normalize.css -->
+	<link href="stylesheets/normalize.css" rel="stylesheet" type="text/css" />
+
+	<!-- Century Gothic Font -->
+	<link href="http://fonts.cdnfonts.com/css/century-gothic" rel="stylesheet">
+
+	<!-- Critical CSS -->
+	<style>
+		body {
+			font-family: 'Century Gothic', Arial, Helvetica, sans-serif;
+		}
+
+		.button {
+
+			border-radius: 10px;
+			width: 260px;
+			color: #fff;
+			font-size: 18px;
+			line-height: 22px;
+			text-align: center;
+			padding: 12px 0 15px;
+			display: inline-block;
+			text-decoration: none;
+		}
+
+		.button.black {
+			background: #000000;
+			color: #fff;
+
+		}
+
+		.pencil_banner {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 40px;
+			font-style: normal;
+			font-weight: bold;
+			font-size: 15px;
+			line-height: 18px;
+			text-align: center;
+			letter-spacing: 0.05em;
+		}
+
+		/* Plan for future banner color variations */
+		.pencil_banner.black {
+			background-color: #000;
+			color: #fff;
+		}
+
+		nav.header {
+			display: flex;
+			width: 100%;
+			background-color: #fff;
+			justify-content: space-between;
+			margin: auto;
+			height: 78px;
+			padding: 0;
+		}
+
+		nav.header .left {
+			text-align: left;
+			width: 30%;
+			padding-left: 10%;
+			padding-top: 27px;
+		}
+
+		nav.header .left .menu_icon {
+			float: left;
+		}
+
+		nav.header .center {
+			text-align: center;
+			width: 20%;
+			padding-top: 17px;
+		}
+
+		nav.header .image_website_logo {
+			height: 44px;
+			width: auto;
+		}
+
+		nav.header .center .logo {
+			max-width: 100%;
+			max-height: 65px;
+			margin-top: -30px;
+		}
+
+		nav.header .right {
+			text-align: right;
+			width: 30%;
+			padding-right: 10%;
+			padding-top: 27px;
+		}
+
+		nav.header .right .menu_icon {
+			float: right;
+		}
+
+		nav.header .left .menu_icon {
+			margin-right: 22px;
+		}
+
+		nav.header .right .menu_icon {
+			margin-left: 22px;
+		}
+
+		nav.header .menu {
+			position: absolute;
+			left: 0;
+			top: 116px;
+			padding-top: 18px;
+			min-width: 258px;
+			background: #FFFFFF;
+			box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+			z-index: 100;
+
+		}
+
+		.nav_highlight {
+			display: none;
+		}
+
+		nav.header a {
+			color: #000;
+			text-decoration: none;
+			cursor: pointer;
+		}
+
+		nav.header a>img {
+			margin-top: -22px;
+		}
+
+		.menu_show {
+			display: none;
+		}
+
+		nav.header .menu ul {
+			list-style-type: none;
+		}
+
+		nav.header .menu ul li {}
+
+		nav.header .menu a {
+			font-size: 15px;
+			display: block;
+			color: #000;
+			height: 48px;
+			text-decoration: none;
+
+		}
+
+		.splash {
+			background-color: #E9E9E9;
+			background-image: url('images/splash_bg_mobile.png');
+			background-repeat: no-repeat;
+			background-position: bottom center;
+			background-size: contain;
+			height: 620px;
+			clear: both;
+		}
+
+
+		.splash .copy {
+			width: 80%;
+			text-align: center;
+
+			margin: 0px 10% 0;
+		}
+
+		.splash .copy h2 {
+
+			font-size: 30px;
+			font-weight: normal;
+			line-height: 61.6px;
+
+		}
+
+		.splash .copy p {
+			font-size: 18px;
+			line-height: 27px;
+			color: #636363;
+		}
+
+		.feature_highlight {
+			display: block;
+			width: 100%;
+			clear: both;
+			height: auto;
+
+		}
+
+		.feature_highlight .highlight_item {
+			float: left;
+			width: 20%;
+			text-align: center;
+		}
+
+		.categories {
+			clear: both;
+		}
+
+		.category {
+			padding-top: 0px;
+			width: 100%;
+			height: 150px;
+			position: relative;
+			margin-bottom: 5px;
+			background-color: #F2F2F2;
+			background-position: right;
+			background-repeat: no-repeat;
+			background-size: contain;
+			vertical-align: middle;
+		}
+
+		a.category_title {
+			display: block;
+			font-size: 20px;
+			height: 150px;
+			line-height: 150px;
+			padding-left: 18px;
+			background-image: url('../images/category_arrow.png');
+			background-repeat: no-repeat;
+			background-position: right;
+			text-decoration: none;
+			color: #000
+		}
+
+		.category_arrow {
+			position: absolute;
+			right: 45%;
+			top: 65px;
+			height: 20px;
+			width: auto;
+			margin: 0 0 -2px 20px;
+		}
+
+		footer {
+			display: block;
+			clear: both;
+			width: 100%;
+			padding: 93px 0 35px;
+		}
+
+		.hidden {
+			display: none;
+		}
+
+		.hidden_mobile {
+			display: none;
+		}
+
+		@media (max-width: 749px) {
+
+			.hidden_mobile {
+				display: none;
+			}
+		}
+
+		@media (min-width: 750px) {
+
+			.hidden_desktop {
+				display: none;
+			}
+
+			.hidden_mobile {
+				display: inline-block;
+			}
+
+			.pencil_banner {
+				position: fixed;
+				z-index: 100;
+				width: 100%;
+				top: 0;
+				left: 0;
+			}
+
+			nav.header {
+				position: fixed;
+				z-index: 100;
+				width: 100%;
+				top: 40px;
+				left: 0;
+				right: 0;
+			}
+
+			nav.header .menu {
+				position: fixed;
+				width: 100%;
+				top: 116px;
+			}
+
+			nav.header .menu ul {
+				display: inline-block;
+				width: 20%;
+			}
+
+			nav.header .menu a:hover {
+				color: #17A7E0;
+			}
+
+			nav.header ul {
+				float: left;
+			}
+
+			nav.header .spacer {
+				width: 182px;
+				border-bottom: 1px solid #E2E2E2
+			}
+
+			nav.header .nav_highlight {
+				display: inline-block;
+				width: 70%;
+				text-align: center;
+			}
+
+			nav.header .nav_highlight img {
+				width: auto;
+				max-height: 396px;
+				height: auto;
+				padding-bottom: 23px;
+			}
+
+			nav.header .nav_highlight_copy {
+				color: #636363;
+				font-size: 15px;
+				line-height: 22.5px;
+				width: 70%;
+				margin: 0px auto;
+				text-align: left;
+			}
+
+			.content {
+				margin-top: 140px;
+
+			}
+
+			.splash {
+				background-color: #E9E9E9;
+				background-image: url('images/splashbg.jpg');
+				background-repeat: no-repeat;
+				background-position: left;
+				height: 620px;
+				clear: both;
+			}
+
+			.splash .copy {
+				padding-top: 143px;
+				padding-right: 179px;
+				max-width: 581px;
+				float: right;
+			}
+
+			.splash .copy h2 {
+				font-size: 44px;
+
+
+			}
+
+			.splash .copy,
+			.splash .copy p {
+				text-align: right;
+			}
+
+
+		}
+	</style>
+	<link rel="stylesheet" href="stylesheets/styles.css" type="text/css" />
+	<title>Dev Test - 4 Moms</title>
+	<meta name="description" content="#" />
+	<link rel="canonical" href="https://[4moms].com/" />
+
+	<!-- SOCIAL MEDIA CARDS -->
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="#" />
+	<meta property="og:description" content="#" />
+	<meta property="og:image" content="https://[4moms].com/img/social.jpg" />
+	<meta property="og:url" content="https://[4moms].com/" />
+	<meta property="og:site_name" content="Dev Test" />
+	<meta property="article:modified_time" content="2021-07-28T09:00:00+00:00" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Dev Test - 4 Moms">
+	<meta name="twitter:description" content="#">
+	<meta name="twitter:image" content="https://[4moms].com/img/social.jpg" />
+	<meta name="twitter:image:alt" content="Dev Test 4 Moms Logo">
+
+</head>
+
+<body>
+
+	<!-- NOTIFICATION BANNER -->
+	<section id="pencil_banner" class="pencil_banner black">
+		Free shipping on orders over $49
+	</section>
+	<!-- NOTIFICATION BANNER END -->
+
+	<!-- NAVIGATION BAR -->
+	<nav class="header">
+		<section class="header_section left">
+			<div id="nav_menu_link" class="menu_icon">
+				<a href="#"><img src="images/menu_closed.png" alt="Menu icon" class="hidden_desktop"></a>
+				<a href="#" class="hidden_mobile">Shop</a>
+			</div>
+			<div class="menu menu_show">
+				<ul>
+					<li><a href="#" data-img="images/category_feeding.jpg"
+							data-copy="High Tech Baby Products, Designed with Multi-tasking Parents in Mind. Believe in Better.">Shop
+							All</a></li>
+					<li><a href="#" data-img="images/category_seats.jpg"
+							data-copy="Comfortable Seats for Infants That Offer a Variety of Features like motions and articulation. ">Seats</a>
+					</li>
+					<li><a href="#" data-img="images/category_playard.jpg">Playards</a></li>
+					<li><a href="#" data-img="images/category_feeding.jpg">Feeding</a></li>
+					<li><a href="#" data-img="images/category_bassinets.jpg">Bassinets</a></li>
+					<li><a href="#" data-img="images/category_tubs.jpg">Bath</a></li>
+					<li><a href="#" data-img="images/category_mobiles.png">Mobile</a></li>
+					<li><a href="#" data-img="images/category_feeding.jpg">Accessories</a></li>
+					<li><a href="#" data-img="images/category_feeding.jpg">Spare Parts</a></li>
+					<li>
+						<div class="spacer"></div>
+					</li>
+					<li><a href="#" data-img="images/category_feeding.jpg">About 4moms</a></li>
+					<li><a href="#" data-img="images/category_feeding.jpg">Support</a></li>
+				</ul>
+				<div class="nav_highlight">
+					<img src="images/category_feeding.jpg" alt="Product highlight image">
+					<div class="nav_highlight_copy">High Tech Baby Products, Designed with Multi-tasking Parents in
+						Mind. Believe in Better.</div>
+				</div>
+			</div>
+			<div id="nav_account" class="menu_icon">
+				<a href="#"><img src="images/menu_account.png" alt="Menu icon" class="hidden_desktop"></a>
+				<span class="hidden_mobile">About 4moms</span>
+			</div>
+		</section>
+		<section class="header_section center">
+			<img src="images/4moms_black_logo-01 2-1.png" alt="4 Moms Logo" class="image_website_logo">
+		</section>
+		<section class="header_section right">
+			<div id="nav_cart" class="menu_icon">
+				<a href="#"><img src="images/menu_cart.png" alt="Cart icon"></a>
+
+			</div>
+			<div id="nav_account" class="menu_icon hidden_mobile">
+				<a href="#"><img src="images/menu_account.png" alt="Account icon" class="hidden_mobile"></a>
+			</div>
+			<div id="nav_search" class="menu_icon">
+				<a href="#"><img src="images/menu_search.png" alt="Search icon"></a>
+			</div>
+			<div id="nav_support" class="menu_icon hidden_mobile">
+				<a href="#">Support</a>
+			</div>
+
+			<div id="nav_location" class="menu_icon">
+				<a href="#"><img src="images/menu_location.png" alt="Location" class="hidden_mobile"> </a>
+			</div>
+
+		</section>
+	</nav>
+	<!-- NAVIGATION BAR END-->
+
+	<!-- CONTENT -->
+	<section id="" class="content">
+
+		<!-- SPLASH -->
+		<section id="" class="splash">
+			<div class="splash_image"></div>
+			<div class="copy">
+				<h2>Freeing up your hands.<br />So you can do more.</h2>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.
+				</p>
+				<a href="#" class="button black">Shop Bassinets</a>
+			</div>
+		</section>
+		<!-- SPLAST END-->
+
+		<!-- FEATURE HIGHLIGHT ICON SET -->
+		<!-- todo: section: feature highlight-->
+		<section id="" class="feature_highlight hidden">
+			<div class="highlight_item">
+				<img />
+				<div class="highlight_title">
+					Functional Design
+				</div>
+				<div class="highlight_copy">
+					Products designed to<br />make parents lives easier
+				</div>
+			</div>
+			<div class="highlight_item">
+				<img />
+				<div class="highlight_title">
+					Parent Tested
+				</div>
+				<div class="highlight_copy">
+					Tested with real parents<br />to ensure the best results
+				</div>
+			</div>
+			<div class="highlight_item">
+				<img />
+				<div class="highlight_title">
+					Technology
+				</div>
+				<div class="highlight_copy">
+					Tested w(FPO)arents to<br />ensure the best results
+				</div>
+			</div>
+		</section>
+		<!-- FEATURE HIGHLIGHT ICON SET END-->
+
+		<!-- PRODUCT CATEGORY NAVIGATION LINKS -->
+		<section id="" class="categories">
+			<div class="category" data-img="images/category_seats.jpg">
+				<a href="#" class="category_title">
+					Shop Seats <img src="images/Arrow@2x.png" class="category_arrow">
+				</a>
+			</div>
+			<div class="category" data-img="images/category_playard.jpg">
+				<a href="#" class="category_title">
+					Shop Playards <img src="images/Arrow@2x.png" class="category_arrow">
+				</a>
+			</div>
+			<div class="category" data-img="images/category_feeding.jpg">
+				<a href="#" class="category_title">
+					Shop Feeding <img src="images/Arrow@2x.png" class="category_arrow">
+				</a>
+			</div>
+			<div class="category" data-img="images/category_bassinets.jpg">
+				<a href="#" class="category_title">
+					Shop Bassinets <img src="images/Arrow@2x.png" class="category_arrow">
+				</a>
+			</div>
+			<div class="category" data-img="images/category_tubs.jpg">
+				<a href="#" class="category_title">
+					Shop Tubs <img src="images/Arrow@2x.png" class="category_arrow">
+				</a>
+			</div>
+			<div class="category" data-img="images/category_mobiles.png">
+				<a href="#" class="category_title">
+					Shop Mobiles <img src="images/Arrow@2x.png" class="category_arrow">
+				</a>
+			</div>
+		</section>
+		<!-- PRODUCT CATEGORY NAVIGATION LINKS END-->
+
+		<!-- 50/50 PRODUCT HIGHLIGHT ROW -->
+		<!-- todo: section: 50/50 product highlight -->
+		<section id="" class="hidden">
+			<div class="highlight50_featureimage">
+			</div>
+			<div class="highlight50">
+				<img class="highlight50_thumb">
+				<h3 class="highlight50_title">rockaRoo®</h3>
+				<p class="highlight50_copy">Back and forth gliding motion babies love, in a compact size.</p>
+				<a href="#" class="button black">Shop Now</a>
+			</div>
+		</section>
+		<!-- 50/50 PRODUCT HIGHLIGHT ROW END-->
+
+		<!-- 40/60 PRODUCT HIGHLIGHT ROW -->
+		<!-- todo: section: 40/60 product highlight -->
+		<section id="" class="hidden">
+			<div class="highlight40_featureimage">
+
+			</div>
+			<div class="highlight60">
+				<div class="highlight60_wrapper">
+					<div class="highlight60_content">
+						<h3 class="highlight60_title">Playards</h3>
+						<p class="highlight60_copy">Playards are hard to use.<br />
+							The breeze® plus is easy.</p>
+						<a href="#" class="button black">Shop Now</a>
+
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- 40/60 PRODUCT HIGHLIGHT ROW END-->
+
+		<!-- TESTIMONIALS SLIDER -->
+		<!-- todo: section: testimonials -->
+		<section id="" class="hidden">
+			<div class="tesimonials">
+				<div class="testimonial">
+					<div class="star_rating">
+					</div>
+					<div class="testimonial_text">
+
+					</div>
+					<div class="testimonial_name">
+
+					</div>
+				</div>
+				<div class="testimonials_pagination">
+
+				</div>
+			</div>
+		</section>
+		<!-- TESTIMONIALS SLIDER END-->
+
+		<!-- INSTAGRAM FEED CAROUSEL -->
+		<section id="" class="hidden">
+			<h2>The 4moms community</h2>
+		</section>
+		<!-- INSTAGRAM FEED CAROUSEL END-->
+
+		<!-- ENDORSEMENTS ROW -->
+		<!-- todo: section: endorsements -->
+		<section id="" class="hidden">
+			<div class="endorsements_copy">
+				<h2>We Believe In Better</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin
+					gravida dolor sit amet lacus accumsan.</p>
+				<a href="#" class="button black">Shop Now</a>
+			</div>
+			<div class="endorsements_icons">
+
+			</div>
+		</section>
+		<!-- ENDORSEMENTS ROW END-->
+
+	</section>
+	<!-- CONTENT END-->
+
+	<!-- FOOTER -->
+	<footer id="" class="black">
+		<div class="footer_menu footer_interactive">
+			<a href="/" class="footer_logo"><img src="images/4moms_white_logo.png" alt="4moms Logo in White"></a>
+			<div class="newsletter">
+				<p>Get the latest 4moms news and offers</p>
+				<form id="form_footer_newsletter" role="form">
+					<div>
+						<input type="email" name="input_email">
+						<input type="submit" value="Submit">
+						<span id="input_email_error" class="form_error">Please double-check your entry</span>
+					</div>
+				</form>
+			</div>
+			<div class="footer_social_links">
+				<a href="#" class="footer_social_link"><img src="images/social_facebook.png" alt="Facebook Logo"></a>
+				<a href="#" class="footer_social_link"><img src="images/social_twitter.png" alt="Twitter Logo"></a>
+				<a href="#" class="footer_social_link"><img src="images/social_pinterest.png" alt="Pinterest Logo"></a>
+				<a href="#" class="footer_social_link"><img src="images/social_youtube.png" alt="Youtube Logo"></a>
+			</div>
+		</div>
+
+		<div class="footer_menu">
+			<div class="footer_menu_title inactive" data-footer_menu_title="shop">Shop</div>
+			<div class="footer_menu_links" data-footer_menu_links="shop">
+				<a href="#">RockRoo Infant Seat</a>
+				<a href="#">Breeze Plus Playard</a>
+				<a href="#">Breeze Go Playard</a>
+				<a href="#">High Chair</a>
+			</div>
+		</div>
+		<div class="footer_menu">
+			<div class="footer_menu_title inactive" data-footer_menu_title="Shopping Help">Shopping Help</div>
+			<div class="footer_menu_links" data-footer_menu_links="Shopping Help">
+				<a href="#">Find a Store</a>
+				<a href="#">Account</a>
+				<a href="#">Shipping &amp; Returns</a>
+				<a href="#">About Affirm Financing</a>
+			</div>
+		</div>
+		<div class="footer_menu">
+			<div class="footer_menu_title inactive" data-footer_menu_title="Support">Support</div>
+			<div class="footer_menu_links" data-footer_menu_links="Support">
+				<a href="#">Support Center</a>
+				<a href="#">Product Registration</a>
+				<a href="#">Safety &amp; Recall</a>
+			</div>
+		</div>
+		<div class="footer_menu">
+			<div class="footer_menu_title inactive" data-footer_menu_title="Company">Company</div>
+			<div class="footer_menu_links" data-footer_menu_links="Company">
+				<a href="#">Careers</a>
+				<a href="#">Contact Us</a>
+				<a href="#">About Us</a>
+				<a href="#">4moms Cares</a>
+				<a href="#">Media Kit</a>
+				<a href="#">Patents</a>
+			</div>
+		</div>
+
+	</footer>
+
+	<div class="footer_copy">
+		<div class="footer_copy_text">© 2019 4moms. All Rights Reserved.</div><br class="hidden_desktop">
+
+		<a href="#">Terms & Conditions</a>&nbsp;&nbsp;
+		<a href="#">Privacy Policy</a>
+	</div> <!-- FOOTER END-->
+
+
+
+	<!-- JQUERY FROM GOOGLE CDN -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script>
+
+		$(function () {
+
+			/* Nav Menu */
+			/* Enable dropdown menu */
+			$('nav.header #nav_menu_link').on('click', function () {
+				if ($('.menu ul').is(":visible")) {
+					$('#nav_menu_link img').attr('src', 'images/menu_closed.png');
+				} else {
+					$('#nav_menu_link img').attr('src', 'images/menu_open.png');
+				}
+				$('nav.header .menu ').toggleClass('menu_show');
+
+			})
+			/* Enable menu highlight on link hover */
+			$('nav.header .menu a').on({
+				mouseenter: function () {
+					var category_image = $(this).data('img');
+					var category_copy = $(this).data('copy');
+					$('nav.header .nav_highlight img').attr('src', category_image);
+					$('nav.header .nav_highlight .nav_highlight_copy').html(category_copy)
+
+				}, mouseleave: function () {
+					$('nav.header .nav_highlight img').attr('src', 'images/category_feeding.jpg');
+					$('nav.header .nav_highlight .nav_highlight_copy').html('High Tech Baby Products, Designed with Multi-tasking Parents in Mind. Believe in Better.')
+				}
+			});
+
+			/* Footer mobile menu display toggle */
+			$('.footer_menu_title').on('click', function () {
+				$(this)
+					.toggleClass('active')
+					.toggleClass('inactive');
+
+				$(this)
+					.next('.footer_menu_links')
+					.toggle();
+			})
+
+
+			/* Category background images */
+			$('.category').each(function () {
+				var image = $(this).data('img');
+				$(this).css({ 'background-image': 'url(' + image + ')' })
+			})
+
+		});
+
+	</script>
+</body>
+
+</html>
